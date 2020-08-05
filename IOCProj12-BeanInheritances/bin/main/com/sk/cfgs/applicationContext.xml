@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+	
+	<bean id="basePulsor" class="com.sk.beans.Bike" abstract="true">
+		<property name="model" value="honda"/>
+		<property name="company" value="hero"/>
+		<property name="enginecc" value="150"/>
+		<property name="fueltankcapacity" value="13"/>	
+		<property name="engineno" value="78"/>
+	</bean>
+	
+	<bean id="basebike" class="com.sk.beans.Bike" parent="basePulsor">
+		<property name="color" value="red"/>
+		<property name="owner" value="RAja"/>
+		<property name="regno" value="12"/>
+	</bean>
+	
+	<bean id="raviPulsor" class="com.sk.beans.Bike" parent="basePulsor">
+		<property name="color" value="red"/>
+		<property name="owner" value="raja"/>
+		<property name="regno" value="111"/>
+	</bean>
+</beans>

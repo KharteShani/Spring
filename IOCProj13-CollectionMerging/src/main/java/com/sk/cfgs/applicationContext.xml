@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+	<bean id="comer" class="com.sk.beans.CollectionMerging" abstract="true">
+		<property name="subjects">
+			<list>
+				<value>ACA</value>
+				<value>ED</value>
+				<value>RTO</value>
+			</list>
+		</property>
+	</bean> 
+	<bean id="comermerge" class="com.sk.beans.CollectionMerging" parent="comer">
+		<property name="subjects">
+			<list merge="true">
+				<value>co</value>
+				<value>pl</value>
+			</list>
+		</property>
+	</bean> 
+</beans>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans default-autowire="byName" xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+	
+	<!-- Dependent bean -->
+	<bean id="tp" class="com.sk.beans.Tourplan" autowire="byName">
+		<property name="places">
+			<array>
+				<value>Mumbai</value>
+				<value>Vizag</value>
+				<value>Delhi</value>
+				<value>Udaypur</value>
+			</array>
+		</property>
+	</bean>
+	<bean id="tp2" class="com.sk.beans.Tourplan">
+		<property name="places">
+			<array>
+				<value>Simala</value>
+				<value>Manali</value>
+				<value>Mahabaleshwar</value>
+				<value>ladakh</value>
+			</array>
+		</property>
+	</bean>
+	
+	<!-- Target Bean -->
+<!-- 	<bean id="ta" class="com.sk.beans.TourAgent" > -->
+<!-- 		<property name="name" value="TravelTriangle"/> -->
+<!-- 	</bean> -->
+		
+	<bean id="ta" class="com.sk.beans.TourAgent" >
+		<constructor-arg value="TravelTriangle"/>
+	</bean>
+	
+</beans>

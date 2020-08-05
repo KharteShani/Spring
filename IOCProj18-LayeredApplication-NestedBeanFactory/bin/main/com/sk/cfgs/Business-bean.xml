@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+	
+	<!-- Hikari Datasource cfg -->
+	<bean id="hkDs" class="com.zaxxer.hikari.HikariDataSource"> 
+		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"/>
+		<property name="jdbcUrl" value="jdbc:oracle:thin:@localhost:1521:orcl"/>
+		<property name="username" value="scott"/>
+		<property name="password" value="tiger"/>
+		<property name="maximumPoolSize" value="30"/>
+		<property name="minimumIdle" value="10"/>
+		<property name="idleTimeout" value="20000"/>
+		<property name="connectionTimeout" value="60000"/>
+		<property name="loginTimeout" value="10"/>
+	</bean>
+	<!-- cfg DAO class -->
+	<bean id="clothDao" class="com.sk.dao.ClothCenterDaoImpl">
+		<constructor-arg ref="hkDs"></constructor-arg>
+	</bean>
+	
+	<!-- cfg service -->
+	<bean id="clothService" class="com.sk.service.ClothCenterServiceImpl">
+		<constructor-arg ref="clothDao"/>
+	</bean>
+	
+</beans>

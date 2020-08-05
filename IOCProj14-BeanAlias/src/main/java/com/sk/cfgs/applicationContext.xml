@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+	
+	<bean id="tria" class="com.sk.Beans.Triangle" name="tria-name">
+		<property name="a" ref="poi"/>
+		
+		<property name="b">
+			<bean class="com.sk.Beans.Point">
+				<property name="x" value="20"/>
+				<property name="y" value="0"/>
+			</bean>
+		</property>
+		
+		<property name="c">
+			<bean class="com.sk.Beans.Point">
+				<property name="x" value="0"/>					<!-- InnerBean -->
+				<property name="y" value="20"/>
+			</bean>
+		</property>
+	</bean>
+		<bean id="poi" class="com.sk.Beans.Point">
+			<property name="x" value="89"/>
+			<property name="y" value="3"/>												
+		</bean>
+	<alias name="tria" alias="tria-alias"/>					<!-- alias how to use -->											
+</beans>

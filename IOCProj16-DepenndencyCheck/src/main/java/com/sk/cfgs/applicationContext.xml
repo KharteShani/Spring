@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+	<!--config bean id -->
+	<bean id="bat" class="com.sk.bean.Bat">
+		<property name="bat_company" value="MRF"/>
+	</bean>
+	
+	<bean id="cktt" class="com.sk.bean.Cricketor" dependency-check="all"> 
+			<constructor-arg ref="bat"/>
+<!-- 			<property name="cktname" value="Dhoni"></property> -->
+	</bean>
+
+</beans>

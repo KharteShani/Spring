@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+<!-- Student Marks  -->
+<bean id="mrks" class="com.sk.marks.StudentMarks">
+	<!-- if you want to resolving then best practice is name -->
+<!-- 	<constructor-arg value="78" index="1"/> -->
+<!-- 	<constructor-arg value="66" index="0"/> -->
+<!-- 	<constructor-arg value="89" index="2"/> -->
+	
+	<constructor-arg value="78" name="m1" index="0" type="float"/>
+	<constructor-arg value="66" name="m2" />
+	<constructor-arg value="89" name="m3"/>
+	
+</bean>
+</beans>

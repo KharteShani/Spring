@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+
+<!--class name  -->
+<bean id="std" class="com.sk.beans.Student">
+	<!--If parameter are same type then this approach is not useful -->
+<!-- 	<constructor-arg value="hyd" type="java.lang.String"/> -->
+<!-- 	<constructor-arg value="35" type="int"/> -->
+<!-- 	<constructor-arg value="Ravi" type="java.lang.String"/> -->
+	<!-- if i used here index -->
+	<constructor-arg value="hyd"/>
+	<constructor-arg value="35" />
+	<constructor-arg value="Ravi"/> 
+</bean>
+
+</beans>

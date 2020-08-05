@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+	<!-- cfg DAO -->
+	<bean id="clgDAO" class="com.sk.dao.ClgDaoImpl" scope="singleton"/>
+	
+	<!-- cfg BO -->
+	<bean id="stBO" class="com.sk.bo.StudentBo" scope="prototype"/>
+	<bean id="empBO" class="com.sk.bo.EmployeeBo" scope="prototype"/>
+	
+	<!--  service-->
+	<bean id="clgservice" class="com.sk.service.ClgMgmtServiceImpl" scope="singleton">
+		<constructor-arg ref="clgDAO"/>
+		<lookup-method name="createStudentBO" bean="stBO"/>
+		<lookup-method name="createEmployeeBO" bean="empBO"/>
+	</bean>
+	
+	<bean class="com.sk.bpp.BPostProcessor"/>
+	
+</beans>
